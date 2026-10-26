@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
-        <shape android:shape="ring">
-            <solid android:color="#0D1117"/>
-            <stroke android:width="4dp" android:color="#444444" />
-            <size android:width="300dp" android:height="300dp"/>
-            <inner-radius android:attr="fingerprintAuthDialogInnerRadius"/>
-        </shape>
-    </item>
-    <item android:top="10dp" android:bottom="10dp" android:left="10dp" android:right="10dp">
-         <rotate android:fromDegrees="-135" android:toDegrees="135" android:pivotX="50%" android:pivotY="50%">
-            <shape android:shape="arc"
-                android:startAngle="0"
-                android:useLevel="true"
-                android:sweepAngle="270">
-                <stroke android:width="8dp" android:color="#33B5E5" />
-            </shape>
-        </rotate>
-    </item>
-</layer-list>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="ring"
+    android:thickness="6dp"
+    android:useLevel="false">
+    <solid android:color="#33B5E5"/>
+</shape>
