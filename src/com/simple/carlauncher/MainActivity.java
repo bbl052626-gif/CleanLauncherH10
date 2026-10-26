@@ -8,6 +8,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -71,4 +73,9 @@ public class MainActivity extends Activity {
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1, locationListener);
         }
     }
+
+    // Métodos de compatibilidad para AppsActivity
+    public static void pressable(View view) {}
+    public static void pressable(ImageView view) {}
+    public static void pressable(TextView view) {}
 }
