@@ -7,8 +7,6 @@
     android:background="#0D1117"
     tools:context=".MainActivity">
 
-
-    <!-- Barra de Estado Superior -->
     <LinearLayout
         android:id="@+id/top_bar"
         android:layout_width="0dp"
@@ -33,7 +31,6 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <!-- Iconos de estado (Bluetooth, Señal, Batería - Usando iconos de sistema como marcador) -->
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -51,10 +48,8 @@
             android:layout_marginStart="16dp"
             android:src="@android:drawable/stat_sys_battery_charge"
             android:tint="#B0BEC5" />
-
     </LinearLayout>
 
-    <!-- COLUMNA IZQUIERDA: Apilados -->
     <LinearLayout
         android:id="@+id/left_column"
         android:layout_width="280dp"
@@ -66,7 +61,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bottom_nav">
 
-        <!-- Widget de Bienvenida y Clima -->
         <LinearLayout
             android:id="@+id/widget_weather"
             android:layout_width="match_parent"
@@ -87,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Buenos noches - Bienvenido"
+                android:text="Buenas noches - Bienvenido"
                 android:textColor="#B0BEC5"
                 android:textSize="14sp" />
 
@@ -101,8 +95,8 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@android:drawable/ic_menu_rotate" <!-- Marcador para icono de clima -->
-                    android:tint="#33B5E5" /> <!-- Azul Neón -->
+                    android:src="@android:drawable/ic_menu_rotate"
+                    android:tint="#33B5E5" />
 
                 <TextView
                     android:id="@+id/text_weather_temp"
@@ -134,7 +128,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Widget de Reproductor de Música -->
         <LinearLayout
             android:id="@+id/widget_music"
             android:layout_width="match_parent"
@@ -152,7 +145,7 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:background="@drawable/bg_album_placeholder" <!-- Marcador para carátula -->
+                    android:background="@drawable/bg_album_placeholder"
                     android:padding="8dp"/>
                 <LinearLayout
                     android:layout_width="0dp"
@@ -178,7 +171,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Controles de música -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -191,7 +183,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Widget de Recordatorio Aceite -->
         <LinearLayout
             android:id="@+id/widget_oil"
             android:layout_width="match_parent"
@@ -204,8 +195,8 @@
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@android:drawable/ic_lock_lock" <!-- Marcador para icono de aceite -->
-                android:tint="#FFC107"/> <!-- Amarillo aviso -->
+                android:src="@android:drawable/ic_lock_lock"
+                android:tint="#FFC107"/>
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -237,10 +228,8 @@
                     android:textSize="10sp" />
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
 
-    <!-- SECCIÓN CENTRAL: Velocímetro -->
     <LinearLayout
         android:id="@+id/center_speedometer"
         android:layout_width="0dp"
@@ -258,7 +247,6 @@
             android:layout_height="300dp"
             android:gravity="center">
 
-            <!-- Imagen de fondo del velocímetro (Simulado con formas) -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -283,13 +271,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="km/h"
-                    android:textColor="#33B5E5" <!-- Azul Neón -->
+                    android:textColor="#33B5E5"
                     android:textSize="18sp" />
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>
 
-    <!-- COLUMNA DERECHA: Mapa -->
     <FrameLayout
         android:id="@+id/right_map"
         android:layout_width="0dp"
@@ -301,14 +288,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bottom_nav">
 
-        <!-- Marcador para el mapa (en la app final aquí pondrás tu fragmento de Google Maps o Waze) -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#1A1D24"
             android:scaleType="centerCrop"/>
 
-        <!-- Superposición de Destino (como en el diseño) -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -343,7 +328,6 @@
         </LinearLayout>
     </FrameLayout>
 
-    <!-- Barra de Navegación Inferior -->
     <LinearLayout
         android:id="@+id/bottom_nav"
         android:layout_width="0dp"
@@ -355,14 +339,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Iconos de navegación (Marcadores de sistema) -->
         <ImageButton android:layout_width="48dp" android:layout_height="48dp" android:src="@android:drawable/ic_menu_mylocation" android:background="?android:selectableItemBackgroundBorderless" android:tint="#FFFFFF"/>
         <ImageButton android:layout_width="48dp" android:layout_height="48dp" android:src="@android:drawable/sym_action_call" android:background="?android:selectableItemBackgroundBorderless" android:tint="#B0BEC5"/>
         <ImageButton android:layout_width="48dp" android:layout_height="48dp" android:src="@android:drawable/ic_media_play" android:background="?android:selectableItemBackgroundBorderless" android:tint="#B0BEC5"/>
         <ImageButton android:layout_width="48dp" android:layout_height="48dp" android:src="@android:drawable/ic_menu_manage" android:background="?android:selectableItemBackgroundBorderless" android:tint="#B0BEC5"/>
         <ImageButton android:layout_width="48dp" android:layout_height="48dp" android:src="@android:drawable/ic_menu_mapmode" android:background="?android:selectableItemBackgroundBorderless" android:tint="#B0BEC5"/>
         <ImageButton android:layout_width="48dp" android:layout_height="48dp" android:src="@android:drawable/ic_menu_preferences" android:background="?android:selectableItemBackgroundBorderless" android:tint="#B0BEC5"/>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
