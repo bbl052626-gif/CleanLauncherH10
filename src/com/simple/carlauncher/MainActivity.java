@@ -1,4 +1,4 @@
-package com.example.cleanlauncher; // Asegúrate de que este sea tu paquete correcto
+package com.simple.carlauncher;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -7,7 +7,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -19,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView textTime;
     private TextView textSpeed;
-    private ProgressBar progressOil;
-    private TextView textOilStatus;
     private Handler clockHandler = new Handler();
 
     @Override
@@ -31,17 +28,12 @@ public class MainActivity extends AppCompatActivity {
         // 1. Inicializar vistas
         textTime = findViewById(R.id.text_time);
         textSpeed = findViewById(R.id.text_speed);
-        progressOil = findViewById(R.id.progress_oil);
-        textOilStatus = findViewById(R.id.text_oil_status);
 
         // 2. Iniciar Reloj en tiempo real
         startClock();
 
         // 3. Iniciar Velocímetro por GPS
         startGpsSpeedometer();
-
-        // 4. Cargar Recordatorio de Aceite (Hardcoded por ahora)
-        setupOilReminder();
     }
 
     private void startClock() {
@@ -49,8 +41,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
-                textTime.setText(sdf.format(new Date()));
-                clockHandler.postDelayed(this, 1000); // Actualizar cada segundo
+                if (textTime != null) {
+                    textTime.setText(sdf.format(new Date()));
+                }
+                clockHandler.postDelayed(this, 1000);
             }
         };
         clockHandler.post(clockRunnable);
@@ -62,11 +56,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onLocationChanged(Location location) {
                 if (location != null) {
-                    // location.getSpeed() viene en m/s. Pasarlo a km/h (* 3.6)
                     float speedKmh = location.getSpeed() * 3.6f;
-                    // Limitar a entero y evitar valores negativos por fluctuación GPS
                     int speedInt = Math.max(0, (int) speedKmh);
-                    textSpeed.setText(String.valueOf(speedInt));
+                    if (textSpeed != null) {
+                        textSpeed.setText(String.valueOf(speedInt));
+                    }
                 }
             }
             @Override public void onStatusChanged(String p, int s, Bundle b) {}
@@ -74,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
             @Override public void onProviderDisabled(String p) {}
         };
 
-        // Solicitar permisos de ubicación para el GPS
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
- 
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1, locationListener);
+        }
+    }
+}
