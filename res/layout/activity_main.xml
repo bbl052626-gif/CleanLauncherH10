@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0D1117" <!-- Fondo negro/gris oscuro -->
+    android:background="#0D1117"
     tools:context=".MainActivity">
+
 
     <!-- Barra de Estado Superior -->
     <LinearLayout
