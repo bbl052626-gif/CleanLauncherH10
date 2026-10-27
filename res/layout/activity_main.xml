@@ -11,13 +11,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!-- HORA MÁS GRANDE -->
         <TextView
             android:id="@+id/text_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="12:00 AM"
             android:textColor="#33B5E5"
-            android:textSize="16sp"
+            android:textSize="32sp"
             android:textStyle="bold"/>
 
         <LinearLayout
@@ -68,6 +69,7 @@
                 android:layout_marginTop="2dp"/>
         </LinearLayout>
 
+        <!-- RECORDATORIO / ACEITE MÁS GRANDE -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,15 +82,16 @@
                 android:layout_height="wrap_content"
                 android:text="ACEITE"
                 android:textColor="#FFC107"
-                android:textSize="11sp"
+                android:textSize="13sp"
                 android:textStyle="bold" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cambio en 4,500 km"
                 android:textColor="#FFFFFF"
-                android:textSize="12sp"
-                android:layout_marginTop="2dp"/>
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"/>
         </LinearLayout>
     </LinearLayout>
 
