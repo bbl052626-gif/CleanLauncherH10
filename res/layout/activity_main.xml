@@ -11,15 +11,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- HORA MÁS GRANDE -->
-        <TextView
-            android:id="@+id/text_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="12:00 AM"
-            android:textColor="#33B5E5"
-            android:textSize="32sp"
-            android:textStyle="bold"/>
+    
+        <TextClock
+    android:id="@+id/tvClock"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="52sp"
+    android:textStyle="bold"
+    android:textColor="#FFFFFF" />
 
         <LinearLayout
             android:layout_width="match_parent"
